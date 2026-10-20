@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Clear Explorer — a plain-language Solana transaction page</title>
+<meta name="description" content="Redesign of the Solana Explorer transaction page: what happened, in one sentence, before any hashes.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./" aria-label="Clear Explorer home"><span class="logo">◎</span> Clear Explorer <span class="tag">redesign concept</span></a>
+  <form id="search" class="search" role="search" autocomplete="off">
+    <input id="q" name="q" placeholder="Paste a transaction signature" aria-label="Transaction signature" spellcheck="false">
+    <button type="submit">Explain</button>
+  </form>
+  <button id="toggleCompare" class="ghost" type="button" title="Show the original Solana Explorer view side by side">Before / After</button>
+</header>
+
+<main id="app" aria-live="polite">
+  <section class="skeleton" id="loading">
+    <div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-card"></div>
+  </section>
+</main>
+
+<section id="compare" class="compare" hidden>
+  <div><h3>Before — explorer.solana.com</h3><img src="assets/before-desktop.png" alt="Original Solana Explorer transaction page" loading="lazy"></div>
+  <div><h3>After — this redesign</h3><p class="muted">You are looking at it. Same transaction, same data, read from mainnet RPC.</p></div>
+</section>
+
+<nav class="mobilebar" aria-label="Quick actions">
+  <button data-act="copy" type="button">Copy signature</button>
+  <button data-act="share" type="button">Share</button>
+  <button data-act="tech" type="button">Technical</button>
+</nav>
+
+<footer class="foot">Concept by filmfolks · Data: Solana mainnet RPC + Jupiter token API · USD values use <em>today's</em> price and are labelled as such.</footer>
+<script src="app.js"></script>
+</body>
+</html>
